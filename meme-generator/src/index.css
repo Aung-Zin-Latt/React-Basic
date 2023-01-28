@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+main {
+  padding: 36px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 85px;
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  color: white;
+  padding: 20px;
+}
+
+.header--image {
+  height: 100%;
+  margin-right: 6px;
+}
+
+.header--title {
+  font-size: 1.25rem;
+  margin-right: auto;
+}
+
+.header--project {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 17px;
+}
+
+.form--input {
+  font-family: "Karla", sans-serif;
+  border: 1px solid #D5D4D8;
+  text-indent: 5px; /* it will space from the left */
+}
+
+.form--button {
+  grid-column: 1 / -1;
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.meme--image {
+  max-width: 100%;
+}
+
+.card--favorite {
+  width: 40px;
+}
+
+.box {
+  height: 130px;
+  width: 130px;
+  border: 2px solid black;
+  display: inline-block;
+  margin-right: 4px;
+  border-radius: 7px;
+}
