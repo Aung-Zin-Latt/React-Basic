@@ -73,3 +73,28 @@ main {
   margin-right: 4px;
   border-radius: 7px;
 }
+
+.meme {
+  position: relative;
+}
+
+.meme--text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-family: Impact, sans-serif;
+  font-size: 36px;
+}
+
+.meme--text.top {
+  top: 0;
+}
+
+.meme--text.bottom {
+  bottom: 0;
+}
+

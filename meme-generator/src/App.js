@@ -14,59 +14,30 @@
 
 
 
+
 import React from "react";
-import boxes from "./components/Boxes"
-import Box from "./components/Box";
 
 export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
 
-    const [squares, setSquares] = React.useState(boxes)
-    
-    // we write like this is imperative
-    // function toggle(id) {
-    //     setSquares(prevSquares => {
-    //         const newSquares = []
-    //         for (let i=0; i < prevSquares.length; i++) {
-    //             const currentSquare = prevSquares[i]
-    //             if (currentSquare.id === id) {
-    //                 const updatedSquare = {
-    //                     ...currentSquare,
-    //                     on: !currentSquare.on
-    //                 }
-    //                 newSquares.push(updatedSquare)
-    //             } else {
-    //                 newSquares.push(currentSquare)
-    //             }
-    //         }
-    //         return newSquares
-    //     })
-    // }
-    
+    console.log("Component Rendered!")
 
-    // we write like this is declarative
-    function toggle(id) {
-        setSquares(prevSquare => {
-            return prevSquare.map((square) => {
-                return square.id === id ? {...square, on: !square.on} : square
-            })
-        })
-    }
+    fetch("https://swapi.dev/api/people/1")
+        .then(res => res.json())
+        // .then(data => setStarWarsData(data))
+        .then(data => console.log(data))
 
-    const squareElements = squares.map(square => (
-        <Box
-            key={square.id} // we cannot call props.key in Box.js, that's why we create id={square.id}
-            // id={square.id}
-            on={square.on}
-            toggle={() => toggle(square.id)} // if we write like this, we don't need id={square.id}
-        />
-    ));
+        // Side effects in React
 
     return (
-        <main>
-            {squareElements}
-        </main>
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
     )
 }
+
+
+
 
 
 
