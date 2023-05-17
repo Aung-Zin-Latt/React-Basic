@@ -19,19 +19,23 @@ import React from "react";
 
 export default function App() {
     const [starWarsData, setStarWarsData] = React.useState({})
+    const [count, setCount] = React.useState(0)
 
     console.log("Component Rendered!")
 
-    fetch("https://swapi.dev/api/people/1")
-        .then(res => res.json())
-        // .then(data => setStarWarsData(data))
-        .then(data => console.log(data))
-
-        // Side effects in React
+    // side effects
+    React.useEffect(() => {
+        console.log("Effect ran")
+    })
 
     return (
         <div>
-            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+            <h2>The Count is  { count }</h2>
+            <button
+                className="form--button"
+                type="submit">
+                Add
+            </button>
         </div>
     )
 }
